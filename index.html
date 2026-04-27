@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>知的探求の交差点 | The Nexus</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fontsで学術的なフォントを読み込む（読み込む前にGoogle Fontsで確認してください） -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- 1. ヘッダー (ナビゲーション) -->
+    <header>
+        <div class="container">
+            <h1 class="site-title">The Nexus</h1>
+            <p class="subtitle">知識が交差する、知的な迷宮への入り口</p>
+        </div>
+    </header>
+
+    <!-- 2. メインコンテンツ (導入) -->
+    <main class="container">
+        <section id="introduction">
+            <h2>❓ 何から学び始めるか迷ったら、ここから</h2>
+            <p>このサイトは、知識を直線的に学ぶ場所ではありません。異なる分野が予期せぬ形で交差し、新たな問いを生み出す「接点（ノード）」こそが、真の学習の場です。</p>
+        </section>
+
+        <!-- 3. 知識のノード群 (最も重要な部分) -->
+        <section id="nodes">
+            <h3>🔗 関連性の高いノード（Explore）</h3>
+            <div class="node-grid">
+                
+                <!-- ノード1: 例として設置 -->
+                <div class="node-card" data-topic="生物学とAI">
+                    <h4>🧬 生物学とAI</h4>
+                    <p>生命体のパターン認識をAIに適用する最新研究動向。</p>
+                    <a href="#details-bioai" class="explore-btn">深掘りする →</a>
+                </div>
+
+                <!-- ノード2: 例として設置 -->
+                <div class="node-card" data-topic="歴史学とゲーム理論">
+                    <h4>📜 歴史学とゲーム理論</h4>
+                    <p>古代の交渉や政治的決断を数学的にモデル化する視点。</p>
+                    <a href="#details-histogame" class="explore-btn">深掘りする →</a>
+                </div>
+
+                <!-- ノード3: 例として設置 -->
+                <div class="node-card" data-topic="哲学と量子力学">
+                    <h4>⚛️ 哲学と量子力学</h4>
+                    <p>観測者が実在に与える影響とは何か？意識と物理学の対話。</p>
+                    <a href="#details-philosophy" class="explore-btn">深掘りする →</a>
+                </div>
+                
+                <!-- ノード4: 例として設置（ここに新しいノードを追加してください） -->
+                <div class="node-card" data-topic="心理学と色彩学">
+                    <h4>🧠 心理学と色彩学</h4>
+                    <p>色彩が感情や注意に与える影響を科学的に分析する。</p>
+                    <a href="#details-colorpsych" class="explore-btn">深掘りする →</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4. 詳細表示エリア (アコーディオン風に動作させることを想定) -->
+        <section id="details-area">
+            <h3>🔍 詳細解説（[ノード名]がここに展開されます）</h3>
+            <div id="detail-content" class="placeholder-box">
+                <p>ここに、選択されたノードのより詳細な解説文が動的に読み込まれます。</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- 5. フッター -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 The Nexus. Curiosity is the only curriculum.</p>
+        </div>
+    </footer>
+
+    <script>
+        // ⭐ 【JavaScriptの追加】ノードクリック時の動きをスムーズにするためのコード例
+        document.querySelectorAll('.node-card').forEach(card => {
+            card.addEventListener('click', (e) => {
+                // クリック自体は防ぐが、リンク先へジャンプさせる機能を持つため、特別な処理は不要
+                // ここに動的に詳細コンテンツを読み込む処理を組み込むとより本格的になります。
+                const topic = card.dataset.topic;
+                const detailArea = document.getElementById('detail-content');
+                
+                // 仮の表示テキスト（ここは実際にデータベースから取得するのが理想です）
+                detailArea.innerHTML = `
+                    <h4>📂 ${topic} についての深掘りコンテンツ</h4>
+                    <p>（コンテンツをここに挿入...）${topic}は、単なるキーワードの並列ではありません。この交差点で、両分野がどのように影響し合っているのかを探求することが重要です。専門的な論文、関連書籍、または実験データへのリ
+ンクをここに配置しましょう。</p>
+                    <p class="source-note">💡 ヒント：情報の出所と、その知的な繋がりを明記することが、サイトの信頼性を高めます。</p>
+                `;
+                // 画面を詳細エリアまでスムーズにスクロールさせる
+                document.getElementById('detail-area').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
+

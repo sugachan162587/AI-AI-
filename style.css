@@ -1,0 +1,146 @@
+/* === 🎨 全体のリセットとベーススタイル === */
+:root {
+    --color-primary: #4a7c59; /* 深い緑：知性、成長の色 */
+    --color-secondary: #b8860b; /* ゴールド：発見、重要性を示すアクセント */
+    --color-background: #1e1e1e; /* ダークグレー背景 */
+    --color-text: #e0e0e0; /* 薄いグレーテキスト */
+    --color-card-bg: #282828; /* カードの背景 */
+    --color-border: #444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif; /* 本文用フォント */
+    background-color: #121212; /* ダークな背景 */
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+/* レイアウトコンテナ */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ============== ヘッダー ============== */
+header {
+    background: #1e1e1e;
+    padding: 40px 0;
+    text-align: center;
+    border-bottom: 3px solid #4a4a4a;
+}
+
+header h1 {
+    font-size: 3em;
+    color: #c0c0c0;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #aaa;
+}
+
+/* ============== セクションとカード ============== */
+section {
+    padding: 50px 0;
+    border-bottom: 1px dashed #2a2a2a;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.2em;
+    color: #c0c0c0;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #4a4a4a;
+    margin: 10px auto 0;
+}
+
+/* カードレイアウト (Flexbox) */
+.card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.card {
+    flex: 1 1 300px; /* フレキシブルな幅 */
+    background: #1e1e1e;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-left: 5px solid #4a4a4a;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(74, 74, 74, 0.4);
+}
+
+.card h3 {
+    color: #6ac0ff;
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+/* ============== ボタンとリンク ============== */
+a.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    margin-top: 20px;
+    background-color: #5c5c5c;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+a.btn:hover {
+    background-color: #7a7a7a;
+}
+
+/* ============== 詳細エリア (シミュレーション) ============== */
+#detail-area {
+    background: #1e1e1e;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-top: 40px;
+}
+#detail-area h3 {
+    color: #6ac0ff;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+
+/* ============== レスポンシブ対応 ============== */
+@media (max-width: 768px) {
+    .card-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+    header h1 {
+        font-size: 2.5em;
+    }
+    h2 {
+        font-size: 1.8em;
+    }
+}
+
